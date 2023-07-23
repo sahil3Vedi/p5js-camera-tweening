@@ -1,4 +1,4 @@
-const lightSource = [100,200,-100];
+const lightSource = [0,1200,-1200];
 const [lx,ly,lz] = lightSource;
 
 function setup(){
@@ -20,8 +20,8 @@ function drawAxes(n){
 
 function displayComputer(color1, color2){
     // Computer is rendered at 0,0,0
-    var [cx,cy,cz] = color1;
     push();
+    var [cx,cy,cz] = color1;
     directionalLight(cx,cy,cz,lx,ly,lz);
     ambientLight(cx,cy,cz);
     ambientMaterial(cx,cy,cz);
@@ -48,8 +48,8 @@ function displayComputer(color1, color2){
 
 function displayTable(color){
     // Table is right below the computer
-    const [cx,cy,cz] = color;
     push();
+    const [cx,cy,cz] = color;
     directionalLight(cx,cy,cz,lx,ly,lz);
     ambientLight(cx,cy,cz);
     ambientMaterial(cx,cy,cz);
@@ -68,13 +68,13 @@ function displayTable(color){
     pop();
 }
 
-function displayWalls(color){
+function displayWallsAndFloor(color1, color2){
     // Wall 1 is right behind the table
-    const [cx,cy,cz] = color;
-    directionalLight(cx,cy,cz,lx,ly,lz);
+    push();
+    var [cx,cy,cz] = color1;
+    // directionalLight(cx,cy,cz,lx,ly,lz);
     ambientLight(cx,cy,cz);
     ambientMaterial(cx,cy,cz);
-    push();
     translate(0,0,-260);
     box(2400,975,20);
     // Wall 2 is opposite to Wall 1
@@ -87,6 +87,12 @@ function displayWalls(color){
     translate(-2420,0,0);
     box(20,975,2400);
     // the floor is.. at the bottom
+    var [cx,cy,cz] = color2;
+    directionalLight(cx,cy,cz,lx,ly,lz);
+    ambientLight(cx,cy,cz);
+    ambientMaterial(cx,cy,cz);
+    translate(1210,488,0);
+    box(2420,2,2420);
     pop();
 }
 
@@ -94,7 +100,7 @@ function loadModels(){
     strokeWeight(0);
     displayComputer([161,161,161],[30,41,59]);
     displayTable([161,98,7]);
-    displayWalls([254,249,195]);
+    displayWallsAndFloor([254,249,195],[66,32,6]);
 }
 
 function draw(){
