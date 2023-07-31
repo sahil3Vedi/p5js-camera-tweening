@@ -1,5 +1,7 @@
-const lightSource = [0,1200,-1200];
-const [lx,ly,lz] = lightSource;
+const lightSourceFront = [0,2400,-2400];
+const lightSourceBack = [0,-2400,-2400];
+const [lfx,lfy,lfz] = lightSourceFront;
+const [lbx,lby,lbz] = lightSourceBack;
 
 function setup(){
     var canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
@@ -8,99 +10,12 @@ function setup(){
     document.oncontextmenu = () => false;
 }
 
-function drawAxes(n){
-    strokeWeight(5);
-    stroke(255,0,0);
-    line(0,0,0,n,0,0);
-    stroke(0,255,0);
-    line(0,0,0,0,n,0);
-    stroke(0,0,255);
-    line(0,0,0,0,0,n);
-}
-
-function displayComputer(color1, color2){
-    // Computer is rendered at 0,0,0
-    push();
-    var [cx,cy,cz] = color1;
-    directionalLight(cx,cy,cz,lx,ly,lz);
-    ambientLight(cx,cy,cz);
-    ambientMaterial(cx,cy,cz);
-    // main frame
-    box(400,225,30);
-    // stand
-    translate(0,137,0);
-    box(50,50,20);
-    // base
-    translate(0,32,0);
-    box(100,15,50);
-    // keyboard
-    var [cx,cy,cz] = color2;
-    directionalLight(cx,cy,cz,lx,ly,lz);
-    ambientLight(cx,cy,cz);
-    ambientMaterial(cx,cy,cz);
-    translate(0,0,125);
-    box(250,15,75);
-    // mouse
-    translate(160,3,0);
-    box(25,9,40);
-    pop();
-}
-
-function displayTable(color){
-    // Table is right below the computer
-    push();
-    const [cx,cy,cz] = color;
-    directionalLight(cx,cy,cz,lx,ly,lz);
-    ambientLight(cx,cy,cz);
-    ambientMaterial(cx,cy,cz);
-    translate(0,183,50);
-    // table body
-    box(1200,14,600);
-    // table legs
-    translate(500,157,250);
-    cylinder(20,300);
-    translate(0,0,-500);
-    cylinder(20,300);
-    translate(-1000,0,0);
-    cylinder(20,300);
-    translate(0,0,500);
-    cylinder(20,300);
-    pop();
-}
-
-function displayWallsAndFloor(color1, color2){
-    // Wall 1 is right behind the table
-    push();
-    var [cx,cy,cz] = color1;
-    // directionalLight(cx,cy,cz,lx,ly,lz);
-    ambientLight(cx,cy,cz);
-    ambientMaterial(cx,cy,cz);
-    translate(0,0,-260);
-    box(2400,975,20);
-    // Wall 2 is opposite to Wall 1
-    translate(0,0,2420);
-    box(2400,975,20);
-    // Wall 3 is between Wall 1 and Wall 2
-    translate(1210,0,-1210);
-    box(20,975,2400);
-    // Wall 4 is opposite to Wall 3
-    translate(-2420,0,0);
-    box(20,975,2400);
-    // the floor is.. at the bottom
-    var [cx,cy,cz] = color2;
-    directionalLight(cx,cy,cz,lx,ly,lz);
-    ambientLight(cx,cy,cz);
-    ambientMaterial(cx,cy,cz);
-    translate(1210,488,0);
-    box(2420,2,2420);
-    pop();
-}
-
 function loadModels(){
     strokeWeight(0);
     displayComputer([161,161,161],[30,41,59]);
     displayTable([161,98,7]);
-    displayWallsAndFloor([254,249,195],[66,32,6]);
+    displayWallsAndFloor([255,251,235],[255,237,213]);
+    displayBed([161,98,7],[186,230,253],[113,63,18],[133,77,14])
 }
 
 function draw(){
