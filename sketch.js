@@ -4,12 +4,10 @@ let computer;
 function setup(){
     var canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
     canvas.parent('sketch3D');
-    createEasyCam({
-        far: 100000
-    });
+    createEasyCam();
     document.oncontextmenu = () => false;
     // setup objects
-    computer = new Computer("red","blue",1,[0,0,0]);
+    computer = new Computer("#a1a1aa","#9ca3af","#a1a1aa",1,[0,0,0]);
 }
 
 function showObjects(){
@@ -19,8 +17,8 @@ function showObjects(){
 
 function showLights(){
     background(226,232,240);
-    ambientLight(128);
-    directionalLight(255,255,255,1,1,-1);
+    ambientLight(200);
+    directionalLight(200,200,200,1,1,-1);
 }
 
 function draw(){
