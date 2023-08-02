@@ -3,7 +3,7 @@ class Computer {
         this.color1 = color(color1);
         this.color2 = color(color2);
         this.scale = scale;
-        this.position = createVector(position[0],position[1],position[2]);
+        this.position = createVector.apply(null,position);
     }
 
     show(){
@@ -12,14 +12,12 @@ class Computer {
         // screen
         push();
         ambientMaterial(this.color1);
-        box(960*this.scale, 540*this.scale,200*this.scale);
+        roundedBox([960*this.scale, 540*this.scale,200*this.scale],50);
         pop();
 
-        // box2
         push();
-        ambientMaterial(this.color2);
-        translate(100,100,1000);
-        box(960*this.scale, 540*this.scale,200*this.scale);
+        translate(0,0,5000);
+        roundedTile([960*this.scale, 540*this.scale,200*this.scale],50);
         pop();
 
         pop();
