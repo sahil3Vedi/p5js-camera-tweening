@@ -7,7 +7,7 @@ function setup(){
     createEasyCam();
     document.oncontextmenu = () => false;
     // setup objects
-    computer = new Computer("#a1a1aa","#9ca3af","#a1a1aa",1,[0,0,0]);
+    computer = new Computer("#a1a1aa","black","#a1a1aa",1,[0,0,0]);
 }
 
 function showObjects(){
