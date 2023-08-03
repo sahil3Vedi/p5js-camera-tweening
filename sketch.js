@@ -1,5 +1,6 @@
 // object vars
 let computer;
+let gamer_chair;
 
 function setup(){
     var canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
@@ -7,12 +8,14 @@ function setup(){
     createEasyCam();
     document.oncontextmenu = () => false;
     // setup objects
-    computer = new Computer("#a1a1aa","black","#a1a1aa",1,[0,0,0]);
+    computer = new Computer("#a1a1aa","black","#a1a1aa",1,[0,0,-5000]);
+    gamer_chair = new GamerChair("blue","black",1,[0,0,0],[0,0,0]);
 }
 
 function showObjects(){
     strokeWeight(0);
     computer.show();
+    gamer_chair.show();
 }
 
 function showLights(){
