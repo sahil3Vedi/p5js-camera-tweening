@@ -57,28 +57,28 @@ class GamerChair{
 
         // finally, wheels!
         push();
-        ambientMaterial(this.color2);
+        ambientMaterial("#94a3b8");
         translate(380*this.scale,790*this.scale,0);
         rotateZ(Math.PI/2);
         rotateX(Math.PI/4);
         cylinder(50*this.scale,40*this.scale)
         pop();
         push();
-        ambientMaterial(this.color2);
+        ambientMaterial("#94a3b8");
         translate(-380*this.scale,790*this.scale,0);
         rotateZ(Math.PI/2);
         rotateX(-Math.PI/6);
         cylinder(50*this.scale,40*this.scale)
         pop();
         push();
-        ambientMaterial(this.color2);
+        ambientMaterial("#94a3b8");
         translate(0,790*this.scale,-380*this.scale);
         rotateZ(Math.PI/2);
         rotateX(-Math.PI/8);
         cylinder(50*this.scale,40*this.scale)
         pop();
         push();
-        ambientMaterial(this.color2);
+        ambientMaterial("#94a3b8");
         translate(0,790*this.scale,380*this.scale);
         rotateZ(Math.PI/2);
         rotateX(Math.PI/8);
