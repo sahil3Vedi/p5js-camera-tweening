@@ -13,7 +13,7 @@ function setup(){
     computer = new Computer("#a1a1aa","black","#a1a1aa",1,[0,0,-5000]);
     gamer_chair = new GamerChair("#fdba74","black",1,[0,1000,-3000],[0,0,0]);
     floor = new Floor([5000,5000],1840); // TODO: add color to constructor
-    table = new Table([4000,2000,200],[0,630,0]);
+    table = new Table([4000,2000,200],[0,630,-5000]);
 }
 
 function showObjects(){

@@ -9,8 +9,8 @@ class Floor{
         translate(0,this.depth,0);
         rotateX(Math.PI/2);
         stroke(20);
-        ambientMaterial("#fefce8");
-        plane(10000,10000);
+        ambientMaterial("#64748b");
+        plane(15000,15000);
         pop();
     }
 }

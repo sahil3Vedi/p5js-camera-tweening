@@ -2,6 +2,7 @@ class GamerChair{
     constructor(color1,color2,scale,position,rotation){
         this.color1 = color(color1);
         this.color2 = color(color2);
+        this.color3 = color("#f1f5f9");
         this.scale = scale;
         this.position = createVector.apply(null,position);
         this.rotation = createVector.apply(null,rotation);
@@ -57,28 +58,28 @@ class GamerChair{
 
         // finally, wheels!
         push();
-        ambientMaterial("#94a3b8");
+        ambientMaterial(this.color3);
         translate(380*this.scale,790*this.scale,0);
         rotateZ(Math.PI/2);
         rotateX(Math.PI/4);
         cylinder(50*this.scale,40*this.scale)
         pop();
         push();
-        ambientMaterial("#94a3b8");
+        ambientMaterial(this.color3);
         translate(-380*this.scale,790*this.scale,0);
         rotateZ(Math.PI/2);
         rotateX(-Math.PI/6);
         cylinder(50*this.scale,40*this.scale)
         pop();
         push();
-        ambientMaterial("#94a3b8");
+        ambientMaterial(this.color3);
         translate(0,790*this.scale,-380*this.scale);
         rotateZ(Math.PI/2);
         rotateX(-Math.PI/8);
         cylinder(50*this.scale,40*this.scale)
         pop();
         push();
-        ambientMaterial("#94a3b8");
+        ambientMaterial(this.color3);
         translate(0,790*this.scale,380*this.scale);
         rotateZ(Math.PI/2);
         rotateX(Math.PI/8);

@@ -18,9 +18,32 @@ class Table{
 
         // table legs
         push();
-        translate([this.dimensions[0]*0.75,0,this.dimensions[2]*0.75]);
-        ambientMaterial("black");
-        cone(50,605);
+        translate(0,800,0);
+        ambientMaterial("white");
+        push();
+        translate(0.375*this.dimensions[0],0,0.375*this.dimensions[1]);
+        rotateX(Math.PI/8);
+        rotateZ(-Math.PI/8);
+        cone(100,1800,24,4,true);
+        pop();
+        push();
+        translate(-0.375*this.dimensions[0],0,0.375*this.dimensions[1]);
+        rotateX(Math.PI/8);
+        rotateZ(Math.PI/8);
+        cone(100,1800,24,4,true);
+        pop();
+        push();
+        translate(-0.375*this.dimensions[0],0,-0.375*this.dimensions[1]);
+        rotateX(-Math.PI/8);
+        rotateZ(Math.PI/8);
+        cone(100,1800,24,4,true);
+        pop();
+        push();
+        translate(0.375*this.dimensions[0],0,-0.375*this.dimensions[1]);
+        rotateX(-Math.PI/8);
+        rotateZ(-Math.PI/8);
+        cone(100,1800,24,4,true);
+        pop();
         pop();
         
         pop();
