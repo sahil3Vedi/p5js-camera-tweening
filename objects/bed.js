@@ -46,7 +46,7 @@ class Bed {
 
         // blanket
         push();
-        ambientMaterial(this.color3);
+        ambientMaterial("#fdba74");
         translate(0,-50,-750);
         roundedBox([6150,400,4525],190);
         pop();
