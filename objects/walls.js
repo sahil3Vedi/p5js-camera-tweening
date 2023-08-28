@@ -1,33 +1,15 @@
 class Walls{
-    constructor(_color){
+    constructor(_color,texture){
         this.color = color(_color);
+        this.texture = texture;
     }
 
     show(){
         push();
-        ambientMaterial(this.color);
-        
-        push();
-        translate(0,0,7499);
-        plane(15000,6000);
-        pop();
-
-        push();
-        translate(0,0,-7499);
-        plane(15000,6000);
-        pop();
-
-        push();
-        rotateY(Math.PI/2);
-        translate(0,0,-7499);
-        plane(15000,6000);
-        pop();
-
-        push();
-        rotateY(Math.PI/2);
-        translate(0,0,7499);
-        plane(15000,6000);
-        pop();
+        directionalLight(255, 255, 255, 0,-1, 1);
+        rotateY(0.62);
+        texture(this.texture);
+        sphere(30000);
 
         pop();
     }
