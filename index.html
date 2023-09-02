@@ -33,9 +33,38 @@
             width: 100%;
             margin: 0;
         }
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999; /* Ensure the overlay appears on top of the sketch */
+        }
+
+        #overlay button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #overlay button:hover {
+            background-color: #2980b9;
+        }
     </style>
     <div id="sketch3D" style="width:100%">
         <!--3D Sketch will come here!-->
+    </div>
+    <div id="overlay">
+        <!-- Add your overlay content here -->
+        <button onclick="startTweening()">Call Sketch Function</button>
     </div>
 </body>
 </html>

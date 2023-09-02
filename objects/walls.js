@@ -7,7 +7,7 @@ class Walls{
     show(){
         push();
         directionalLight(255, 255, 255, 0,-1, 1);
-        rotateY(0.62);
+        // rotateY(0.62);
         texture(this.texture);
         sphere(30000);
 
